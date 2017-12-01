@@ -36,11 +36,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var app = (0, _express2.default)();
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
-app.use(_express2.default.static('../build/static'));
 app.use(_bodyParser2.default.xml());
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
-app.use(_express2.default.static(_path2.default.join(__dirname, '../../build')));
+app.use(_express2.default.static(_path2.default.join(__dirname, '../build')));
 app.use('/', _routes2.default);
 
 _mongoose2.default.connect('mongodb://root:parserffxiv@ds113606.mlab.com:13606/parser-db');
