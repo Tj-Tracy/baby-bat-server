@@ -52,6 +52,6 @@ db.once('open', function () {
   console.log('connected to db');
 });
 
-app.listen(5000, function () {
+app.listen(process.env.PORT || 5000, function () {
   return console.log('5000');
 });
