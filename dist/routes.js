@@ -76,7 +76,7 @@ router.post('/submitParse', function (req, res) {
   }
 });
 
-router.get('/parse/:id', function (req, res) {
+router.get('/api/parse/:id', function (req, res) {
   res.set('Content-type', 'application/json');
   _parse2.default.findOne({
     id: req.params.id
@@ -87,6 +87,10 @@ router.get('/parse/:id', function (req, res) {
       res.send(dpsParse);
     }
   });
+});
+
+router.get('/parse/:id', function (req, res) {
+  res.sendFile(_path2.default.join(__dirname, '../build', 'index.html'));
 });
 
 exports.default = router;

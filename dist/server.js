@@ -42,7 +42,7 @@ app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_express2.default.static(_path2.default.join(__dirname, '../build')));
 app.use('/', _routes2.default);
 
-_mongoose2.default.connect('mongodb://root:parserffxiv@ds113606.mlab.com:13606/parser-db');
+_mongoose2.default.connect('mongodb://root:parserffxiv@ds113606.mlab.com:13606/parser-db', { useMongoClient: true });
 var db = exports.db = _mongoose2.default.connection;
 
 db.on('error', function () {
