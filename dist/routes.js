@@ -30,7 +30,7 @@ router.get('/', function (req, res) {
   res.sendFile(_path2.default.join(__dirname, '../build', 'index.html'));
 });
 
-router.get('/parseList', function (req, res) {
+router.get('/api/parseList', function (req, res) {
   res.set('Content-type', 'application/json');
   _parse2.default.find({}, "id uploadTime title", function (err, dpsParse) {
     if (err) {
@@ -51,7 +51,7 @@ router.get('/parseList', function (req, res) {
 });
 
 // Handle submitting a parse to the database
-router.post('/submitParse', function (req, res) {
+router.post('/api/submitParse', function (req, res) {
 
   // create the object to save to mongo
   if (req.body.raw) {
